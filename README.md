@@ -207,10 +207,11 @@ Make sure you have installed your android device driver and `adb devices` comman
 9. A project that uses data from IMU, GPS and Barometer modules to estimate position based on space state filters implementation [https://github.com/Peterex08/IMUGPS](https://github.com/Peterex08/IMUGPS)
 10. A project to analyzes smartphone sensor data to recognize and differentiate between different prayer postures (Qiyam, Ruku, Sujud, and Jalsa). The goal is to identify patterns in the data that can determine both the specific posture and the speed at which the prayer is performed.[https://github.com/TawhidUmar9/Human-Activity-Recognition](https://github.com/TawhidUmar9/Human-Activity-Recognition)
 11. A Windows desktop application that transforms a smartphone into a gesture‑based remote control. It streams real‑time sensor (gyroscope) data over WebSockets, recognizes swipe gestures, and maps them to system or media actions on the desktop [https://github.com/Guerric9018/Frogmote](https://github.com/Guerric9018/Frogmote)
-12. PHASETIMER ([https://github.com/zenbooster/phasetimer](https://github.com/zenbooster/phasetimer))
-13. Score real-time walking data of users wearing an Andriod device. ([https://github.com/eliasHw/BME450W_Fall2022](https://github.com/eliasHw/BME450W_Fall2022))
-14. Wireless Steering wheel using python and android with paddles and breaks. ([https://rutube.ru/video/03d53de54054337a8c54b825f7fcc3fe/](https://rutube.ru/video/03d53de54054337a8c54b825f7fcc3fe/))
-15. [https://github.com/strets123/walking-pictionary](https://github.com/strets123/walking-pictionary)
+12. Real-time pothole detection system powered by a deep 1D Convolutional Neural Network (CNN). It processes sequential accelerometer and gyroscope data from mobile sensors to classify road anomalies [https://github.com/ArunaK-netizen/PaveSense](https://github.com/ArunaK-netizen/PaveSense)
+13. PHASETIMER ([https://github.com/zenbooster/phasetimer](https://github.com/zenbooster/phasetimer))
+14. Score real-time walking data of users wearing an Andriod device. ([https://github.com/eliasHw/BME450W_Fall2022](https://github.com/eliasHw/BME450W_Fall2022))
+15. Wireless Steering wheel using python and android with paddles and breaks. ([https://rutube.ru/video/03d53de54054337a8c54b825f7fcc3fe/](https://rutube.ru/video/03d53de54054337a8c54b825f7fcc3fe/))
+16. [https://github.com/strets123/walking-pictionary](https://github.com/strets123/walking-pictionary)
 
 If you're using this app in a project and would like to share the link, feel free to submit a pull request with the link and a brief description so that it can be helpful to others.
 
