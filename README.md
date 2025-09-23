@@ -19,8 +19,15 @@
 
 Since this application functions as a Websocket Server, you will require a Websocket Client API to establish a connection with the application. To obtain a Websocket library for your preferred programming language click [here](https://github.com/facundofarias/awesome-websockets). 
  
- 
- 
+<div align="center">
+
+
+<img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExaGFxcnAyMzZ5YjlwZWI4cWhuanY1b3BmMjl5NHJzNm1iMDRncjRmbSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/UzMQhiAShNeygMPWqt/giphy.gif" width="100" heigth="100"> 
+
+### For streaming android sensor over MQTT see new project
+[https://github.com/UmerCodez/SensorSpot](https://github.com/UmerCodez/SensorSpot)
+
+</div> 
  
  # Usage
  To receive sensor data, **Websocket client**  must connect to the app using following **URL**.
