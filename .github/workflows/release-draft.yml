@@ -1,0 +1,90 @@
+name: APK Release Draft
+
+on:
+  workflow_dispatch:
+    inputs:
+      app_name:
+        description: 'App Name'
+        required: true
+        default: 'SensorServer'
+      tag_name:
+        description: 'Tag Name'
+        required: true
+
+permissions:
+  contents: write
+
+jobs:
+  build-release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Decode Keystore
+        id: decode_keystore
+        uses: timheuer/base64-to-file@v1
+        with:
+          fileName: "keystore"
+          encodedString: ${{ secrets.ANDROID_KEYSTORE_BASE_64 }}
+
+      - name: Set up Java
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '21'
+
+      - name: Grant execute permission to gradlew
+        run: chmod +x ./gradlew
+
+      - name: Build APK
+        run: |
+          ./gradlew assembleRelease \
+            -Pandroid.injected.signing.store.file=${{ steps.decode_keystore.outputs.filePath }} \
+            -Pandroid.injected.signing.store.password=${{ secrets.ANDROID_KEYSTORE_STORE_PASSWORD }} \
+            -Pandroid.injected.signing.key.alias=${{ secrets.ANDROID_KEYSTORE_ALIAS }} \
+            -Pandroid.injected.signing.key.password=${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
+
+      - name: Rename APK
+        run: |
+          mv app/build/outputs/apk/release/app-release.apk "${{ github.event.inputs.app_name }}-${{ github.event.inputs.tag_name }}.apk"
+          echo "renamed_apk=${{ github.event.inputs.app_name }}-${{ github.event.inputs.tag_name }}.apk" >> $GITHUB_ENV
+
+      # It uses `continue-on-error: true` so the job won't fail if it breaks
+      - name: Get commit messages since last tag
+        id: release_notes
+        continue-on-error: true
+        run: |
+          git fetch --tags
+          LAST_TAG=$(git describe --tags --abbrev=0 2>/dev/null || echo "")
+          if [ -z "$LAST_TAG" ]; then
+            git log --pretty=format:"%s %h" > changelog.txt
+          else
+            git log ${LAST_TAG}..HEAD --pretty=format:"%s %h" > changelog.txt
+          fi
+          
+
+      # If previous step failed
+      - name: Ensure changelog.txt exists
+        if: failure()
+        run: echo "unable to find commits from last tag" > changelog.txt
+
+
+      - name: Upload APK Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ github.event.inputs.app_name }}-${{ github.event.inputs.tag_name }}
+          path: ${{ env.renamed_apk }}
+
+      - name: Create Release Draft
+        uses: ncipollo/release-action@v1
+        with:
+          artifacts: ${{ env.renamed_apk }}
+          tag: ${{ github.event.inputs.tag_name }}
+          draft: true
+          name: ${{ github.event.inputs.tag_name }}
+          prerelease: false
+          bodyFile: changelog.txt
