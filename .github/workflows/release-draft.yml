@@ -30,7 +30,10 @@ jobs:
           channel: stable
 
       - name: Install dependencies (flutter web app)
-        run: flutter pub get
+        run: |
+          cd sensors_dashboard
+          flutter pub get
+          cd ..
 
       - name: Set up Python
         uses: actions/setup-python@v5
