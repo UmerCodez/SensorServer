@@ -5,8 +5,8 @@ import os
 import shutil
 import sys
 
-# .../app/src/main/assets/webapp
-deployment_dir = os.path.join(".","app","src","main","assets","webapp")
+# .../data/src/main/assets/webapp
+deployment_dir = os.path.join(".","data","src","main","assets","webapp")
 flutter_source_dir = os.path.join(".","sensors_dashboard")
 flutter_web_build_dir = os.path.join(flutter_source_dir, "build","web")
 
