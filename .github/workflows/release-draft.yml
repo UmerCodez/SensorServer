@@ -24,6 +24,22 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+
+      - name: Install dependencies (flutter web app)
+        run: flutter pub get
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Deploy Web Application
+        run: python deploy_web_app.py
+
       - name: Decode Keystore
         id: decode_keystore
         uses: timheuer/base64-to-file@v1
