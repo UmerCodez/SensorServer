@@ -227,15 +227,5 @@ If you're using this app in a project and would like to share the link, feel fre
 2. [DroidPad](https://github.com/umer0586/DroidPad). Android app for creating customizable control interfaces for Bluetooth Low energy,WebSocket, MQTT, TCP, and UDP protocols.
 3. _**NEW**_ [SensorSpot](https://github.com/UmerCodez/SensorSpot). Android app to stream real-time device sensor data to an MQTT broker. Select sensors, configure broker settings, and publish seamlessly. 
 
-## Found this useful
-<a href="https://www.buymeacoffee.com/umerfarooq" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
-
-Send Bitcoin at 1NHkiJmjUdjqbCKJf6ZksGKMvYu52Q5tew 
-
-OR
-
-Scan following QR code with bitcoin wallet app to send bitcoins
-
-[<img src="https://github.com/umer0586/SensorServer/assets/35717992/11cd8194-6e9c-469c-a09f-06fd1bc93acd" height="200">](https://github.com/umer0586/SensorServer/assets/35717992/11cd8194-6e9c-469c-a09f-06fd1bc93acd)
 
 
