@@ -22,15 +22,6 @@
 
 Since this application functions as a Websocket Server, you will require a Websocket Client API to establish a connection with the application. To obtain a Websocket library for your preferred programming language click [here](https://github.com/facundofarias/awesome-websockets). 
  
-<div align="center">
-
-
-<img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExaGFxcnAyMzZ5YjlwZWI4cWhuanY1b3BmMjl5NHJzNm1iMDRncjRmbSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/UzMQhiAShNeygMPWqt/giphy.gif" width="100" heigth="100"> 
-
-### For streaming android sensor over MQTT see new project
-[https://github.com/UmerCodez/SensorSpot](https://github.com/UmerCodez/SensorSpot)
-
-</div> 
  
  # Usage
  To receive sensor data, **Websocket client**  must connect to the app using following **URL**.
@@ -223,12 +214,7 @@ Make sure you have installed your android device driver and `adb devices` comman
 15. Wireless Steering wheel using python and android with paddles and breaks. ([https://rutube.ru/video/03d53de54054337a8c54b825f7fcc3fe/](https://rutube.ru/video/03d53de54054337a8c54b825f7fcc3fe/))
 16. [https://github.com/strets123/walking-pictionary](https://github.com/strets123/walking-pictionary)
 
-If you're using this app in a project and would like to share the link, feel free to submit a pull request with the link and a brief description so that it can be helpful to others.
 
-# My Other Android Projects
-1. [SensaGram](https://github.com/umer0586/SensaGram). For streaming realtime sensor data over UDP
-2. [DroidPad](https://github.com/umer0586/DroidPad). Android app for creating customizable control interfaces for Bluetooth Low energy,WebSocket, MQTT, TCP, and UDP protocols.
-3. _**NEW**_ [SensorSpot](https://github.com/UmerCodez/SensorSpot). Android app to stream real-time device sensor data to an MQTT broker. Select sensors, configure broker settings, and publish seamlessly. 
 
 
 
