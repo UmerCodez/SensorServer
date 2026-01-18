@@ -14,7 +14,7 @@ android {
 
     defaultConfig {
         applicationId = "github.umer0586.sensorserver"
-        minSdk = 21
+        minSdk = 23
         targetSdk = 36
         versionCode = 35
         versionName = "7.0.0"
