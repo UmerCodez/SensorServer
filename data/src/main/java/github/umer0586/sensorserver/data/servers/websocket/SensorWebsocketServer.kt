@@ -413,29 +413,8 @@ class SensorWebSocketServer(private val context: Context, address: InetSocketAdd
                 ignoreCase = true
             ) && websocket.getAttachment<Any>() is GPS
         ) {
-            // For Android 6.0 or above check if user has allowed location permission
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && context.checkSelfPermission(
-                    Manifest.permission.ACCESS_FINE_LOCATION
-                ) == PackageManager.PERMISSION_GRANTED
-            ) {
-                if (context.checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
-                    locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER)?.apply {
-                        try {
-                            websocket.send(this.toJson(lastKnownLocation = true))
-                        } catch (e: WebsocketNotConnectedException) {
-                            e.printStackTrace()
-                        }
-                    }
-                } else {
-                    websocket.close(
-                        CLOSE_CODE_PERMISSION_DENIED,
-                        "App has No permission to access location. Go to your device's installed apps settings and allow location permission to Sensor Server app"
-                    )
-                }
-            }
-            // For Android 5.0 permissions are granted at install time
-            else {
 
+            if (context.checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
                 locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER)?.apply {
                     try {
                         websocket.send(this.toJson(lastKnownLocation = true))
@@ -443,6 +422,11 @@ class SensorWebSocketServer(private val context: Context, address: InetSocketAdd
                         e.printStackTrace()
                     }
                 }
+            } else {
+                websocket.close(
+                    CLOSE_CODE_PERMISSION_DENIED,
+                    "App has No permission to access location. Go to your device's installed apps settings and allow location permission to Sensor Server app"
+                )
             }
         }
     }
