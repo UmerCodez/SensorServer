@@ -180,7 +180,7 @@ class SensorWebSocketServer(private val context: Context, address: InetSocketAdd
 
         val requestedSensorList = mutableListOf<Sensor>()
 
-        requestedSensorTypes?.forEach { requestedSensorType ->
+        requestedSensorTypes.forEach { requestedSensorType ->
 
             val sensor = sensorManager.getSensorFromStringType(requestedSensorType)
             if (sensor == null) {
