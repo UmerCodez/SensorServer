@@ -290,8 +290,7 @@ class SensorWebSocketServer(private val context: Context, address: InetSocketAdd
     @SuppressLint("MissingPermission")
     private fun handleGPSRequest(clientWebsocket: WebSocket) {
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M &&
-            context.checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED
+        if (context.checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED
         ) {
             // Reason message must be 123 bytes or less
             clientWebsocket.close(
@@ -301,7 +300,7 @@ class SensorWebSocketServer(private val context: Context, address: InetSocketAdd
             return
         }
 
-        // In Android 5.0 permissions are granted at installation time
+
         locationManager.requestLocationUpdates(
             LocationManager.GPS_PROVIDER,
             0,
