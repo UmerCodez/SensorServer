@@ -19,6 +19,14 @@
 </div>
 
 
+### Other Similar Projects
+
+- For sensor streaming over **MQTT** check out [SensorSpot](https://github.com/UmerCodez/SensorSpot)
+- For sensor streaming over **UDP** check out [SensaGram](https://github.com/UmerCodez/SensaGram)
+
+
+
+#
 
 Since this application functions as a Websocket Server, you will require a Websocket Client API to establish a connection with the application. To obtain a Websocket library for your preferred programming language click [here](https://github.com/facundofarias/awesome-websockets). 
  
