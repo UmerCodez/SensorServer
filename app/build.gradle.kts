@@ -16,8 +16,8 @@ android {
         applicationId = "github.umer0586.sensorserver"
         minSdk = 23
         targetSdk = 36
-        versionCode = 36
-        versionName = "7.1.0"
+        versionCode = 37
+        versionName = "7.2.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
