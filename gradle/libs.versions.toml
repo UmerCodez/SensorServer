@@ -1,4 +1,11 @@
 [versions]
+# Cannot upgrade to AGP 9 because AndServer depends on kapt
+# and an outdated Gradle version.
+# Multiple upgrade attempts were made, but none worked after
+# migrating to AGP 9.
+# AndServer has not been maintained (last commit: June 7, 2023).
+# TODO: To migrate to AGP 9, consider replacing AndServer with NanoHTTPD:
+# https://github.com/NanoHttpd/nanohttpd/issues
 agp = "8.13.2"
 jacksonDatabind = "2.10.0"
 kotlin = "2.3.10"
