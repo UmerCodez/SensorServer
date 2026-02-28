@@ -80,6 +80,9 @@ Use `JSON` parser to get these individual values.
 - For position sensors [/topics/sensors/sensors_position](https://developer.android.com/guide/topics/sensors/sensors_position)
 - For Environmental sensors [/topics/sensors/sensors_environment](https://developer.android.com/guide/topics/sensors/sensors_environment)
 
+## Accessing Camera
+To acess camera via websocket client api see [WebsocketCAM](https://github.com/UmerCodez/WebsocketCAM)
+
 ## Undocumented (mostly QTI) sensors on Android devices
 Some Android devices have additional sensors like **Coarse Motion Classifier** `(com.qti.sensor.motion_classifier)`, **Basic Gesture** `(com.qti.sensor.basic_gestures)` etc  which are not documented on offical android docs. Please refer to this [Blog](https://louis993546.medium.com/quick-tech-support-undocumented-mostly-qti-sensors-on-android-devices-d7e2fb6c5064) for corresponding values in `values` array  
 
