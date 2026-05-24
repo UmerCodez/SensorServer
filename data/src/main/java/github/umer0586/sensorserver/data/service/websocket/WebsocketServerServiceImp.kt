@@ -230,8 +230,8 @@ class WebsocketServerServiceImp : Service(), WebsocketServerService {
                   val websocketClientsList = mutableListOf<WebsocketClient>()
                   webSockets.forEach { websocket ->
 
-                      val address = websocket.remoteSocketAddress.address.hostName
-                      val port = websocket.remoteSocketAddress.port
+                      val address = websocket.remoteSocketAddress?.address?.hostName ?: return@forEach
+                      val port = websocket.remoteSocketAddress?.port ?: return@forEach
 
                       if(websocket.getAttachment<Any>() is Sensor){
                           val deviceSensor = (websocket.getAttachment<Any>() as Sensor).toDeviceSensor()
